@@ -1,0 +1,58 @@
+<div
+  class="main-container flex flex-col justify-center items-center min-h-screen bg-gray-100"
+>
+  <div>
+    <h1 class="mb-5 text-semibold text-2xl">
+      How do you want the webform to load?
+    </h1>
+  </div>
+  <div>
+    <div class="bg-white p-10 rounded shadow-2xl w-full max-w-6xl transform">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <a
+          class="transition duration-300 ease-in-out transform hover:-translate-y-1 rounded p-6 bg-gradient-to-r from-blue-500 to-teal-500 shadow-lg text-white hover:shadow-2xl"
+          routerLink="user-driven"
+        >
+          <h2 class="text-lg font-bold mb-2">User Driven interaction</h2>
+          <p>On this page, the Ajua modal is triggered by a button click.</p>
+          <p class="invisible">Filler</p>
+          <div
+            class="mt-4 py-2 px-6 border border-white rounded hover:bg-white hover:text-blue-500 transition duration-300"
+          >
+            Go To Page
+          </div>
+        </a>
+
+        <a
+          class="transition duration-300 ease-in-out transform hover:-translate-y-1 rounded p-6 bg-gradient-to-r from-green-500 to-lime-500 shadow-lg text-white hover:shadow-2xl"
+          routerLink="auto-popup"
+        >
+          <h2 class="text-lg font-bold mb-2">Automatic pop up</h2>
+          <p>
+            On this page, no user interaction is required. This demonstrates
+            automatic pop ups.
+          </p>
+          <div
+            class="mt-4 py-2 px-6 border border-white rounded hover:bg-white hover:text-green-500 transition duration-300"
+          >
+            Go To Page
+          </div>
+        </a>
+
+        <a
+          class="transition duration-300 ease-in-out transform hover:-translate-y-1 rounded p-6 bg-gradient-to-r from-red-500 to-pink-500 shadow-lg text-white hover:shadow-2xl"
+          routerLink="with-form"
+        >
+          <h2 class="text-lg font-bold mb-2">Choose a survey</h2>
+          <p>Provide a join code to participate in a survey</p>
+          <p class="invisible">Filler</p>
+          <div
+            class="mt-4 py-2 px-6 border border-white rounded hover:bg-white hover:text-red-500 transition duration-300"
+          >
+            Go To Page
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
