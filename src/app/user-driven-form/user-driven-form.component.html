@@ -1,19 +1,21 @@
-<div class="flex flex-col items-center min-h-screen bg-gray-100 p-4">
-  <div class="mt-56"></div>
+<div
+  class="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-100 to-teal-100 p-4"
+>
+  <div class="mt-44"></div>
   <div>
     <div class="text-center mb-8">
       <div
-        class="w-full flex flex-col justify-center items-center max-w-2xl mb-8 bg-white shadow-xl rounded-lg p-8"
+        class="w-full flex flex-col justify-center items-center max-w-2xl mb-8 bg-gray-100 rounded-lg p-8 border border-gray-200 shadow-xl hover:shadow-2xl transition duration-300"
       >
-        <h1 class="text-2xl font-bold text-gray-800 mb-2">User Driven</h1>
-        <span class="text-gray-500 text-lg leading-relaxed text-center">
-          On this page, the Ajua modal is triggered by a button click. <br />
-          This demonstrates a user-driven workflow.
-        </span>
-
+        <h1 class="text-3xl font-bold text-gray-800 mb-4">User Driven</h1>
+        <p class="text-gray-600 text-lg leading-relaxed text-center">
+          On this page, the Ajua modal is triggered with a simple button click.
+          <br />
+          This illustrates a user-driven workflow.
+        </p>
         <div class="mt-6"></div>
         <button
-          class="px-6 py-3 bg-[#3b82f6] text-white font-semibold rounded-lg shadow-lg hover:bg-[#2563eb] transition-colors duration-300"
+          class="animate-pulse-slow px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-lg hover:bg-teal-600 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-opacity-50"
           onclick="window.toggleModal()"
         >
           Trigger Modal
@@ -22,7 +24,8 @@
     </div>
 
     <a
-      class="flex items-center justify-center bg-blue-500 text-white rounded-full px-4 h-12 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 w-fit"
+      class="flex items-center justify-center text-gray-700 text-lg w-fit"
+      text-gray-600
       routerLink="/"
     >
       <span class="mr-2">
@@ -43,7 +46,5 @@
       </span>
       Back to Landing Page
     </a>
-
-    <!-- <div id="embedding"></div> -->
   </div>
 </div>

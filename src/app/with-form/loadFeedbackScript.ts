@@ -1,10 +1,10 @@
+import { TJoinCode, joinCodes } from '../../../types';
 import { config } from '../../../config';
 
 let scriptLoaded = false;
 let scriptIsValid = false;
 
-export function loadFeedbackScript(joinCode: string): Promise<void> {
-  console.log(joinCode);
+export function loadFeedbackScript(joinCode: TJoinCode): Promise<void> {
   return new Promise<void>((resolve, reject) => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
@@ -17,7 +17,7 @@ export function loadFeedbackScript(joinCode: string): Promise<void> {
         const container = document.getElementById('embedding');
         if (container && (window as any).createWebform) {
           (window as any).createWebform(container, {
-            joinCode: joinCode || 'I2SSQB',
+            joinCode: joinCode || joinCodes.ICEA.code,
           });
 
           window.addEventListener('message', handlePostMessage);

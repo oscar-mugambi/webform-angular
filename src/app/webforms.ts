@@ -1,6 +1,9 @@
 import { config } from '../../config/';
+import { joinCodes } from '../../types';
 
-export function loadFeedbackScript(joinCode = 'IVA3BXOP'): Promise<void> {
+export function loadFeedbackScript(
+  joinCode = joinCodes.ICEA.code
+): Promise<void> {
   const container = document.getElementById('embedding');
   const isExistingScript = document.getElementById('feedback-script');
   if (isExistingScript) {
@@ -9,7 +12,6 @@ export function loadFeedbackScript(joinCode = 'IVA3BXOP'): Promise<void> {
     if (container) {
       container.innerHTML = '';
     }
-
     isExistingScript.remove();
   }
 
@@ -44,7 +46,7 @@ export function loadFeedbackScript(joinCode = 'IVA3BXOP'): Promise<void> {
 }
 
 function handlePostMessage(event: MessageEvent) {
-  if (event.origin !== 'https://d3k3s4etbg1v25.cloudfront.net') {
+  if (event.origin !== config.origin) {
     return;
   }
   if (

@@ -6,4 +6,5 @@ export const config = {
   local: {
     url: 'http://localhost:3000/embed/v1/embed.js',
   },
+  origin: 'https://d3k3s4etbg1v25.cloudfront.net',
 };

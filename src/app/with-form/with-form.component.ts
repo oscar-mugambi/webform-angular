@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { loadFeedbackScript } from '../webforms';
+import { TJoinCode, TJoinCodeKey, joinCodes } from '../../../types';
 
 interface Option {
   value: string;
@@ -9,21 +10,20 @@ interface Option {
 @Component({
   selector: 'app-with-form',
   templateUrl: './with-form.component.html',
-  styleUrls: ['./with-form.component.css'],
 })
 export class WithFormComponent implements OnInit {
   options: Option[] = [
-    { value: 'IVA3BXOP', label: 'NPS Survey' },
-    { value: 'I2SSQB', label: 'Random Survey' },
-    { value: 'MWAMBATEST', label: 'System Test' },
+    { value: joinCodes.ICEA.code, label: joinCodes.ICEA.label },
+    { value: joinCodes.RANDOM.code, label: joinCodes.RANDOM.label },
+    { value: joinCodes.SYSTEM_TEST.code, label: joinCodes.SYSTEM_TEST.label },
   ];
-  selectedOption!: string;
+  selectedOption!: TJoinCode;
 
   ngOnInit() {
-    this.selectedOption = 'IVA3BXOP';
+    this.selectedOption = joinCodes.ICEA.code as TJoinCode;
   }
 
-  async loadScript(joinCode: string) {
+  async loadScript(joinCode: TJoinCode) {
     try {
       await loadFeedbackScript(joinCode);
       (window as any).openModal();

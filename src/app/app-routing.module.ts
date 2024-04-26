@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserDrivenComponent } from './user-driven-form/user-driven-form.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { UserDrivenComponent } from './user-driven-form/user-driven-form.component';
 import { AutoPopupComponent } from './auto-popup/auto-popup.component';
 import { WithFormComponent } from './with-form/with-form.component';
 

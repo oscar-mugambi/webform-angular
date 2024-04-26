@@ -4,7 +4,6 @@ import { loadFeedbackScript } from '../webforms';
 @Component({
   selector: 'app-auto-popup',
   templateUrl: './auto-popup.component.html',
-  styleUrls: ['./auto-popup.component.css'],
 })
 export class AutoPopupComponent implements OnInit {
   constructor() {}

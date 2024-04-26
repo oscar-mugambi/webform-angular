@@ -4,7 +4,6 @@ import { loadFeedbackScript } from '../webforms';
 @Component({
   selector: 'app-root',
   templateUrl: './user-driven-form.component.html',
-  styleUrls: ['./user-driven-form.component.css'],
 })
 export class UserDrivenComponent implements OnInit {
   title = 'webform';
