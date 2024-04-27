@@ -38,7 +38,7 @@ The script source is available at [this link](https://d3k3s4etbg1v25.cloudfront.
 
 ## API References
 
-**1.  `createWebform(parent, config)`** :  Initializes the webform inside the iframe.
+**1. `createWebform(parent, config)`**: Initializes the webform inside the iframe.
 - **Arguments**:
   - `parent` (HTMLElement): The container element where the webform will be embedded. This should be the element with the ID `embedding`, designated to host the iframe.
   - `config` (object): Configuration options for the webform.
@@ -46,11 +46,12 @@ The script source is available at [this link](https://d3k3s4etbg1v25.cloudfront.
     - `height` (string): Height of the webform, default is 'auto'.
     - `width` (string): Width of the webform, default is '100%'.
 
+**2. `openModal()`**: Opens the modal window containing the iframe.
 
+**3. `closeModal()`**: Closes the modal window.
 
-**2. `openModal()`** - Opens the modal window containing the iframe.
-**3. `closeModal()`** - Closes the modal window.
-**4. `toggleModal()`** - Toggles the state of the modal window.
+**4. `toggleModal()`**: Toggles the state of the modal window.
+
 
 ## Post Messages
 
