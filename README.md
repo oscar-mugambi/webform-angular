@@ -14,14 +14,13 @@ Below you will find the setup instructions, usage details, and the API for inter
 
 ## Installation 
 To get started with the Example App, clone this repository and install the necessary dependencies:
-```
-	git clone https://github.com/oscar-mugambi/webform-angular 
-	cd webform-angular 
-	npm install
-```
+```bash
+git clone https://github.com/oscar-mugambi/webform-angular
+cd webform-angular
+npm install
 
 ## Usage
-To interact with our webforms, you need to  load the necessary scripts to manage the iframe webforms:
+To interact with our webforms, you need to  load the necessary scripts to manage the iframe:
 The script source is available at [this link](https://d3k3s4etbg1v25.cloudfront.net/embed/v1/embed.js).
 
 1. **Embed the Container**: Make sure that your **root** HTML file contains a `div` element with the ID `embedding`. This `div` will serve as the host for the iframe. Insert the following HTML snippet at the **root index.html**
