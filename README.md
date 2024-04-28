@@ -14,10 +14,13 @@ Below you will find the setup instructions, usage details, and the API for inter
 
 ## Installation 
 To get started with the Example App, clone this repository and install the necessary dependencies:
+
 ```bash
 git clone https://github.com/oscar-mugambi/webform-angular
 cd webform-angular
 npm install
+```
+
 
 ## Usage
 To interact with our webforms, you need to  load the necessary scripts to manage the iframe:
