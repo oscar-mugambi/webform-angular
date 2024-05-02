@@ -81,3 +81,36 @@ function handlePostMessage(event: MessageEvent) {
 
   }
 }
+```
+### Add A Participant Email
+
+This section describes how to dynamically add a participant's email address before displaying the popup
+
+```javascript
+function handlePostMessage(event: MessageEvent) {
+  if (event.origin !== config.origin) {
+    return;
+  }
+  if (
+    event.data.message === 'webform loaded' ||
+    event.data.message === 'Webform is valid'
+  ) {
+    window.postMessage({
+      message: 'webform-initialization-successful',
+    });
+
+    // dynamically add a participants email
+    event!.source!.postMessage(
+      {
+        type: 'webform:participant:add', // This type must specified exactly as is
+        message: 'test13@icea.com', // This should be the participant's email address or phone number
+        code: 'ADD_PARTICIPANT', // This code must be passed exactly as is
+      },
+      (window as any).embedUrl // Ensure you specify the target of your message to be the Ajua domain, otherwise we won't intercept it
+    );
+  }
+}
+```
+
+
+
