@@ -5,14 +5,11 @@ export function loadFeedbackScript(
   joinCode = joinCodes.ICEA.code
 ): Promise<void> {
   const container = document.getElementById('embedding');
-  const isExistingScript = document.getElementById('feedback-script');
-  if (isExistingScript) {
-    window.removeEventListener('message', handlePostMessage);
+  const existingScript = document.getElementById('feedback-script');
 
-    if (container) {
-      container.innerHTML = '';
-    }
-    isExistingScript.remove();
+  if (existingScript) {
+    console.log('Feedback script already exists, initializing webform.');
+    return initializeWebform(container, joinCode);
   }
 
   return new Promise<void>((resolve, reject) => {
@@ -21,27 +18,31 @@ export function loadFeedbackScript(
     script.src = config.production.url;
     script.async = true;
     script.id = 'feedback-script';
-
     script.onload = () => {
-      const loadWebform = () => {
-        if (container && (window as any).createWebform) {
-          (window as any).createWebform(container, {
-            joinCode,
-          });
-
-          window.addEventListener('message', handlePostMessage);
-        }
-      };
-
-      loadWebform();
-      resolve();
+      initializeWebform(container, joinCode).then(resolve).catch(reject);
     };
-
     script.onerror = (error) => {
       reject(error);
     };
-
     document.head.appendChild(script);
+  });
+}
+
+function initializeWebform(
+  container: HTMLElement | null,
+  joinCode: string
+): Promise<void> {
+  return new Promise<void>((resolve) => {
+    const loadWebform = () => {
+      if (container && (window as any).createWebform) {
+        (window as any).createWebform(container, { joinCode });
+        window.addEventListener('message', handlePostMessage);
+        resolve();
+      } else {
+        setTimeout(loadWebform, 100);
+      }
+    };
+    loadWebform();
   });
 }
 
@@ -56,7 +57,6 @@ function handlePostMessage(event: MessageEvent) {
     window.postMessage({
       message: 'webform-initialization-successful',
     });
-
     // dynamically add a participants email
     event!.source!.postMessage(
       {

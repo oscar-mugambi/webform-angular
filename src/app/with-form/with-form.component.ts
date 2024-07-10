@@ -26,7 +26,9 @@ export class WithFormComponent implements OnInit {
   async loadScript(joinCode: TJoinCode) {
     try {
       await loadFeedbackScript(joinCode);
-      (window as any).openModal();
+      setTimeout(() => {
+        (window as any).openModal();
+      }, 2000);
     } catch (error) {
       console.error('Error loading script:', error);
     }

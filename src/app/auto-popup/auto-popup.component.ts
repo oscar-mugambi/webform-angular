@@ -15,7 +15,9 @@ export class AutoPopupComponent implements OnInit {
   async loadScript() {
     try {
       await loadFeedbackScript();
-      (window as any).openModal();
+      setTimeout(() => {
+        (window as any).openModal();
+      }, 2000);
     } catch (error) {
       console.error('Error loading script:', error);
     }
