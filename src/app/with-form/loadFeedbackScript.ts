@@ -37,7 +37,7 @@ export function loadFeedbackScript(joinCode: TJoinCode): Promise<void> {
 }
 
 function handlePostMessage(event: MessageEvent) {
-  if (event.origin !== 'https://d3k3s4etbg1v25.cloudfront.net') {
+  if (event.origin !== config.production.url) {
     return;
   }
   if (
